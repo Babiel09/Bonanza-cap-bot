@@ -1,19 +1,19 @@
-import { Injectable } from "@nestjs/common";
-import { IsString } from "class-validator";
+import { IsString } from 'class-validator';
 
-@Injectable()
+export class ImovelDTO {
+  @IsString()
+  //({ description: 'Região do imóvel (ex.: mg, sp)', example: 'mg' })
+  regiao: string;
 
-export class ImovelDTO{
+  @IsString()
+  //({ description: 'Categoria do imóvel (ex.: celulares, imoveis)', example: 'imoveis' })
+  categoria: string;
 
-    //Exemplo de URL:
-//https://mg.olx.com.br/belo-horizonte-e-regiao/celulares/iphone-xr-1446728594?lis=listing_no_category
+  @IsString()
+  //({ description: 'Nome ou título do imóvel', example: 'Casa 3 quartos' })
+  nomeDoImovel: string;
 
-    @IsString()
-    regiao:string;
-
-    @IsString()
-    categoria:string;
-
-    @IsString()
-    nomeDoImovel:string;
+  @IsString()
+  //({ description: 'URL completa do anúncio', example: 'https://mg.olx.com.br/belo-horizonte-e-regiao/imoveis/casa-3-quartos-1446728594' })
+  url: string;
 }
